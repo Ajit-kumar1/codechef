@@ -1,0 +1,84 @@
+/*
+Chef is taking a tough examination. The question paper consists of NN objective problems and each problem has 44 options A, B, C,A,B,C, and DD, out of which, exactly one option is correct.
+
+Since Chef did not study for the exam, he does not know the answer to any of the problems. Chef was looking nearby for help when his friend somehow communicated the following information:
+
+Exactly N_AN 
+A
+​
+  problems have option AA as the answer.
+Exactly N_BN 
+B
+​
+  problems have option BB as the answer.
+Exactly N_CN 
+C
+​
+  problems have option CC as the answer.
+Exactly N_DN 
+D
+​
+  problems have option DD as the answer.
+Note that:
+
+N_A + N_B + N_C + N_D = N
+Each problem is worth exactly 11 mark and there is no negative marking.
+Even though Chef knows the number of correct options of each type, he does not know the correct answer to any problem.
+Based on the given information, find the maximum marks Chef can guarantee if he marks the answers optimally.
+
+Input Format
+First line will contain TT, number of test cases. Then the test cases follow.
+First line of each test case contains an integer NN denoting the number of problems.
+Second line of each test case contains 44 integers N_A, N_B, N_C,N 
+A - as mentioned in the problem statement.
+Output Format
+For each test case, output the maximum marks Chef can guarantee if he marks the answers optimally.
+
+Sample 1:
+Input
+Output
+2
+5
+0 0 5 0
+10
+7 1 1 1
+
+*/
+
+Solution of the problem
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc= new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] arr=new int[n];
+		int[] b=new int[4];
+		int j;
+		for(int i=0;i<n;i++)
+		{ 
+		    int max=0;
+		    int a=sc.nextInt();
+		    for(j=0;j<4;j++)
+		    {
+		         b[j]=sc.nextInt();
+		    }
+		    max=b[0];
+		    for(j=0;j<4;j++)
+		    {
+		        if(max<b[j])
+		        max=b[j];
+		    }
+		    System.out.println(max);
+		}
+	}
+}
